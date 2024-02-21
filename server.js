@@ -25,6 +25,9 @@ app.use(cors(
 
 //app.use('/api/auth', authRoutes);
 //app.use('/api/friend-invitation', friendInvitationRoutes);
+app.get('/',(req,res)=>{
+    res.json("Hello");
+})
 app.use('/auth', authRoutes);
 app.use('/friend-invitation', friendInvitationRoutes);
 
