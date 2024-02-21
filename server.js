@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors(
     {
         //origin: ["https://chat-app-frontend-rosy.vercel.app"],
-        origin: "*",
+        origin: "https://chat-app-frontend-rosy.vercel.app",
         methods: ["POST", "GET"],
         credentials: true,
         allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Origin"]
