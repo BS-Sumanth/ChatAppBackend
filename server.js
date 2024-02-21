@@ -13,10 +13,8 @@ const PORT = process.env.PORT || process.env.API_PORT;
 const app = express();
 app.use(express.json());
 //app.use(cors());
-app.options('*', cors());
 app.use(cors(
     {
-        //origin: ["https://chat-app-frontend-rosy.vercel.app"],
         origin: "https://chat-app-frontend-rosy.vercel.app",
         methods: ["POST", "GET"],
         credentials: true,
