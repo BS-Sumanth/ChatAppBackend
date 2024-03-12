@@ -3,7 +3,8 @@ const postRegister = require('./postRegister');
 const adminRegister = require('./adminRegister');
 const adminLogin = require('./adminLogin');
 const blacklist = require('./blacklist');
-const removeBlacklist=require('./removeBlacklist');
+const removeBlacklist = require('./removeBlacklist');
+const reset = require('./reset');
 
 exports.controllers = {
     postLogin,
@@ -11,5 +12,6 @@ exports.controllers = {
     adminRegister,
     adminLogin,
     blacklist,
-    removeBlacklist
+    removeBlacklist,
+    reset,
 }

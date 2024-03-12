@@ -21,7 +21,13 @@ const blacklistSchema = Joi.object({
     mail: Joi.string().email().required(),
 })
 
-router.post('/register', validator.body(registerSchema), authControllers.controllers.postRegister);
+const verifyEmailSchema = Joi.object({
+    token: Joi.string().required(),
+});
+
+router.post('/register', validator.body(registerSchema), authControllers.controllers.postRegister.postRegister);
+
+
 
 router.post('/login', validator.body(loginSchema), authControllers.controllers.postLogin);
 
@@ -32,6 +38,13 @@ router.post('/adminlogin', validator.body(loginSchema), authControllers.controll
 router.post('/blacklist', validator.body(blacklistSchema), adminPrivilege, authControllers.controllers.blacklist);
 
 router.post('/removeBlacklist',validator.body(blacklistSchema),adminPrivilege,authControllers.controllers.removeBlacklist);
+
+router.post('/reset',validator.body(loginSchema),authControllers.controllers.reset);
+
+router.get('/verify-email/:token', validator.params(verifyEmailSchema), authControllers.controllers.postRegister.verifyEmail);
+
+router.get('/new-password/:token', validator.params(verifyEmailSchema), authControllers.controllers.postRegister.newPassword);
+
 
 router.get('/test', auth, (req, res) => {
     res.send("Request passed");

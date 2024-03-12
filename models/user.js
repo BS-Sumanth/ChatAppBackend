@@ -7,7 +7,9 @@ const userSchema = new mongoose.Schema({
     username: { type: String },
     password: { type: String },
     admin: { type: Boolean },
-    friends: [{ type: Schema.Types.Object, ref: 'User' }]
+    friends: [{ type: Schema.Types.Object, ref: 'User' }],
+    verified: { type: Boolean },
+    verificationToken: {type: String}
 });
 
 module.exports = mongoose.model("User", userSchema);
