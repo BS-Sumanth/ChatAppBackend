@@ -11,15 +11,15 @@ const friendInvitationRoutes = require('./routes/friendInvitationRoutes');
 const PORT = process.env.PORT || process.env.API_PORT;
 const app = express();
 app.use(express.json());
-app.use(cors());
-/*app.use(cors(
+//app.use(cors());
+app.use(cors(
     {
-        origin: "https://chat-app-frontend-rosy.vercel.app",
+        origin: "https://chatappfrontend-yvxd.onrender.com",
         methods: ["POST", "GET"],
         credentials: true,
         allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Origin"]
     }
-));*/
+));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/friend-invitation', friendInvitationRoutes);
